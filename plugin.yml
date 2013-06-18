@@ -1,0 +1,34 @@
+name: ShortIt
+main: net.targetcraft.shortit.MainClass
+version: 0.4
+description: ShortIt
+author: aman207
+
+commands:
+    link:
+     description: General command for all of ShortIt's needs
+     permission: shortit.getlink
+     default: op
+permissions:
+    shortit.*:
+        description: Gives access to all commands
+        children:
+            shortit.autoshort: true
+            shortit.getlink: true
+            shortit.admin: true
+        default: op
+    shortit.admin:
+        description: Allows the user to reload the configuration file. More commands coming soon
+        default: op
+    shortit.short*:
+        description: Gives access to autoshort and getlink
+        children:
+            shortit.autoshort: true
+            shortit.getlink: true
+        default: op
+    shortit.autoshort:
+        description: Lets you auto shorten URLs in the chat
+        default: op
+    shortit.getlink:
+        description: Lets you short a URL using the command /link [url]
+        default: op
