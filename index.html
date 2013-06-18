@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Shortit by aman207</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Shortit</h1>
+        <h2>Auto shortens URLs in Minecraft chat using YOURLS API</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/aman207/ShortIT/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/aman207/ShortIT/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/aman207/ShortIT" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p>If you own your own domain(eg. <a href="http://begr.im">http://begr.im</a>), and you want to host your own URL shortener, then this is the plugin for you!</p>
+
+<h2>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>ShortIt is a plugin where it automatically shortens links when you post them into the chat. The difference between this plugin and many others is that it focuses on the YOURLS API. YOURLS stands for Your Own URL Shortener and is very easy to install on a webserver. See <a href="http://yourls.org">yourls.org</a> for more info.</p>
+
+<h2>
+<a name="commands" class="anchor" href="#commands"><span class="octicon octicon-link"></span></a>Commands</h2>
+
+<p>/link [url]
+Lets you make a link without anybody else seeing it but you
+/link about
+Lists the information about the plugin
+/link reload
+Reloads the config
+NOTE: THIS CURRENTLY DOES NOT WORK
+/link help
+Lists the current commands</p>
+
+<h2>
+<a name="permissions" class="anchor" href="#permissions"><span class="octicon octicon-link"></span></a>Permissions</h2>
+
+<p>shortit.*
+Gives access to all commands
+shortit.admin
+Gives access to /reload
+shortit.short*
+Gives access to /link [url] and the ability to auto short links
+shortit.autoshort
+Only gives the ability to auto shorten links in the chat
+shortit.getlink
+Only gives the ability to shorten links via the command /link [url]</p>
+
+<h2>
+<a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>Visit <a href="https://github.com/aman207/ShortIT/wiki/Setup">this page here</a> on how to setup YOURLS and the config.</p>
+
+<h2>
+<a name="config" class="anchor" href="#config"><span class="octicon octicon-link"></span></a>Config</h2>
+
+<p>Currently, there is only one item on the config and that is the link for the YOURLS API.</p>
+
+<h2>
+<a name="to-do" class="anchor" href="#to-do"><span class="octicon octicon-link"></span></a>To-Do</h2>
+
+<p>The ability to choose the colour of a shortened link
+See if the server is running a version of Bukkit that does not support the new chat event and use the old chat event
+A command that halts the ability to auto shorten links
+Blacklist and whitelist certain links
+Fix /link reload
+Suggestions?</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
