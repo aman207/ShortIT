@@ -1,11 +1,10 @@
-ShortIt
+Note: Some of the classes here are untested and most likely do not work. This is not the official source that is on bukkit right now. 
+
 If you own your own domain(eg. http://begr.im), and you want to host your own URL shortener, then this is the plugin for you!
 
 About
 
 ShortIt is a plugin where it automatically shortens links when you post them into the chat. The difference between this plugin and many others is that it focuses on the YOURLS API. YOURLS stands for Your Own URL Shortener and is very easy to install on a webserver. See yourls.org for more info.
-
-Commands/Permissions
 
 Commands
 
@@ -18,6 +17,7 @@ Reloads the config
 NOTE: THIS CURRENTLY DOES NOT WORK
 /link help
 Lists the current commands
+
 Permissions
 
 shortit.*
