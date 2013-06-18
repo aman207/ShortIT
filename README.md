@@ -32,7 +32,7 @@ shortit.getlink
 Only gives the ability to shorten links via the command /link [url]
 Setup
 
-Visit this page here on how to setup YOURLS and the config.
+See https://github.com/aman207/ShortIT/wiki/Setup on how to setup YOURLS and the config.
 
 Config
 
