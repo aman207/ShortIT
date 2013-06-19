@@ -1,6 +1,6 @@
 name: ShortIt
 main: net.targetcraft.shortit.MainClass
-version: 0.4
+version: 0.7
 description: ShortIt
 author: aman207
 
@@ -18,7 +18,7 @@ permissions:
             shortit.admin: true
         default: op
     shortit.admin:
-        description: Allows the user to reload the configuration file. More commands coming soon
+        description: Allows the user ban, unban and view the users who have been banned from shortening URLs
         default: op
     shortit.short*:
         description: Gives access to autoshort and getlink
