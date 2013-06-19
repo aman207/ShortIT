@@ -84,5 +84,28 @@ public class GetShortURL {
 		return sb.toString();
 			
 	}
+	public static String blockedURL(String URLGet, Player player, String defaultURL)
+	{
+		Pattern p = Pattern.compile("(?i)\\b((?:https?://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?«»“”‘’]))");
+		Matcher m = p.matcher(URLGet);
+		StringBuffer sb = new StringBuffer();
+		if(player.hasPermission("shortit.autoshort"))
+		{
+			while (m.find())  
+			 {  
+				URLGet=m.group(1);
+				if (URLGet.startsWith("http://")||URLGet.startsWith("www."))
+					{
+					    URLGet=ChatColor.RED+"[URL Redacted]";
+					}
+			}
+			m.appendReplacement(sb, "");
+			sb.append(URLGet);
+			
+		}
+		m.appendTail(sb);
+		return sb.toString();
+		
+	}
 
 }

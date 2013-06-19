@@ -3,6 +3,7 @@ package net.targetcraft.shortit;
 import java.io.IOException;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,7 +21,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class ShortURLCommand {
-	public static void getLink(String URLGet, CommandSender sender, String defaultURL) throws UnknownHostException
+	public static void getLink(String URLGet, CommandSender sender, String defaultURL, List<String>userBlacklist) throws UnknownHostException
 	{
 		
 		Pattern p = Pattern.compile("(?i)\\b((?:https?://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?«»“”‘’]))");
@@ -33,6 +34,25 @@ public class ShortURLCommand {
 		    if (URLGet.startsWith("www.")||(URLGet.startsWith("http://")))
 		     {
 			    try {
+			    	boolean onBlackList=false;
+			    	String[] blacklistArray = userBlacklist.toArray(new String[0]);
+			    	
+			    	if(sender.equals(blacklistArray))
+			    	{
+			    		onBlackList=true;
+			    	}
+			    	if(!sender.equals(blacklistArray))
+			    	{
+			    		onBlackList=false;
+			    	}
+			    	
+			    	if (onBlackList==true)
+			    	{
+			    		sender.sendMessage(ChatColor.RED+"[ShortIt] "+ChatColor.YELLOW+"Error. Someone has put you on the Blacklist. You are not able to shorten URLs until you are unbanned");
+			    	}
+			    	if (onBlackList==false)
+			    	{
+			    	
 				   String URL=defaultURL+URLGet;
 				   DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 	               DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
@@ -57,6 +77,7 @@ public class ShortURLCommand {
 	            }
 
 		}
+			    }
 		
            catch (IOException e) {
         	   sender.sendMessage(ChatColor.DARK_RED+"[ShortIt] An error occured. Please make sure you entered in the URL correctly. begr.im URL Shortener might also be down");
@@ -82,5 +103,5 @@ public class ShortURLCommand {
 		 }
 		m.appendTail(sb);
 }
-
+	
 }
