@@ -1,4 +1,5 @@
 #Only edit the link below if you have YOURLS installed on a server that you own and configured it properly
 api-link: http://begr.im/yourls-api.php?signature=26dc86d493&action=shorturl&url=
+urlcolour: '&2'
 user-blacklist:
-  - notch
+  - notchadf

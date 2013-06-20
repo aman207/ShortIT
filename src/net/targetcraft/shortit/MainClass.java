@@ -13,7 +13,7 @@ public class MainClass extends JavaPlugin {
 		if (!file.exists())
 		{
 			getLogger().info("[ShortIt] Configuration not found. Generating...");
-			getConfig().options().copyDefaults(true);
+			this.getConfig().options().copyDefaults(true);
 			this.saveConfig();
 		}
 		getCommand("link").setExecutor(new CommandListener(this));

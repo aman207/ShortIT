@@ -160,15 +160,23 @@ public class CommandListener implements Listener, CommandExecutor {
 	        			 }
 	        			 
 	        		 }
-	        		 else if(args[0].startsWith("http://")||args[0].startsWith("www."))
+	        		 else
 	        		 {
 	        			 try {
 	        				 String defaultURL;
 	        				 defaultURL=plugin.getConfig().getString("api-link");
-	        				 
+	        				 /**if (plugin.getConfig().getBoolean("blacklist-boolean")==true&&plugin.getConfig().getBoolean("whitelist-boolean")==false)
+	        				 {
+	        					 List<String> blacklist =plugin.getConfig().getStringList("blacklist");
+	        					 BlkListGetLink.getLink(args[0], sender, defaultURL, blacklist);
+	        				 }
+	        				 else if (plugin.getConfig().getBoolean("blacklist-boolean")==false&&plugin.getConfig().getBoolean("whitelist-boolean")==false)
+	        				 {*/
+	        				 List<String> userBlacklist=plugin.getConfig().getStringList("user-blacklist");
 	        				 String urlcolour=plugin.getConfig().getString("urlcolour");
-		        			 ShortURLCommand.getLink(args[0], sender, defaultURL,urlcolour);	 
-	     					return true;
+	        				 ShortURLCommand.getLink(args[0], sender, defaultURL, userBlacklist, urlcolour);
+	        				 //}
+	     					 return true;
 	     				} catch (UnknownHostException e1) {
 	     				     sender.sendMessage(ChatColor.DARK_RED+"Invalid Syntax. Please enter in a URL after /link");
 	     				}
@@ -181,10 +189,6 @@ public class CommandListener implements Listener, CommandExecutor {
 	             			 sender.sendMessage(ChatColor.DARK_RED+"Invalid Syntax. Please enter in a URL after /link");
 	             		 }
 	                   	 
-	        		 }
-	        		 else
-	        		 {
-	        			 sender.sendMessage(ChatColor.RED+"[ShortIt] "+ChatColor.YELLOW+"Invalid Syntax. To view the current commands, type /link help");
 	        		 }
 	        		 
 	             }
